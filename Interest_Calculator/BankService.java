@@ -12,7 +12,7 @@ public class BankService {
 		r.setInterest(age, gender);
 		System.out.println(r.calculateInterest());
 		System.out.println(r.calculateAmountDeposited());
-		System.out.println(r.calculateMaturityAmount(20*principal,r.calculateInterest()));
+		System.out.println(r.calculateMaturityAmount(tenure*4*principal,r.calculateInterest()));
 		}
 	}
 	public boolean validateData(float principal, int tenure,int age, String gender) 
@@ -27,6 +27,7 @@ public class BankService {
 		{
 			BankValidationException o=new BankValidationException();
 			System.out.println(o.toString());
+			throw new Exception();
 		}
 		}
 		catch(Exception e)
